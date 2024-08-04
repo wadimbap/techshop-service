@@ -64,11 +64,23 @@ public class ProductService {
     public BaseProductDTO getProductById(Long id) {
         logger.info("Getting product with id {}", id);
 
-        BaseProduct product = baseProductRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Product not found with id " + id));
+        BaseProduct product = getProductOrThrowException(id);
 
         logger.info("Product retrieved: {}", product);
 
         return productMapperService.mapToDTO(product);
+    }
+
+    public void deleteProduct(Long id) {
+        logger.info("Deleting product with id {}", id);
+
+        BaseProduct productToDelete = getProductOrThrowException(id);
+        baseProductRepository.delete(productToDelete);
+        logger.info("Deleted product with id: {}", id);
+    }
+
+    private BaseProduct getProductOrThrowException(Long id) {
+        return baseProductRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Product not found with id " + id));
     }
 }
