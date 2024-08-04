@@ -59,9 +59,10 @@
     ```json
     [
       {
+        "productType": "DESKTOP",
         "id": 1,
         "serialNumber": "12345",
-        "manufacturer": "Test Manufacturer",
+        "manufacturer": "HP",
         "price": 100.0,
         "quantity": 10,
         "formFactor": "ATX"
@@ -86,6 +87,7 @@
 
     ```json
     {
+      "productType": "DESKTOP",
       "id": 1,
       "serialNumber": "12345",
       "manufacturer": "Test Manufacturer",
@@ -107,6 +109,7 @@
 
     ```json
     {
+      "productType": "DESKTOP",
       "serialNumber": "12345",
       "manufacturer": "Test Manufacturer",
       "price": 100.0,
@@ -122,19 +125,7 @@
     Content-Type: application/json
 
     {
-      "serialNumber": "12345",
-      "manufacturer": "Test Manufacturer",
-      "price": 100.0,
-      "quantity": 10,
-      "formFactor": "ATX"
-    }
-    ```
-
-- **Пример ответа:**
-
-    ```json
-    {
-      "id": 1,
+      "productType": "DESKTOP",
       "serialNumber": "12345",
       "manufacturer": "Test Manufacturer",
       "price": 100.0,
@@ -154,6 +145,7 @@
 
     ```json
     {
+      "productType": "DESKTOP",
       "serialNumber": "12345",
       "manufacturer": "Updated Manufacturer",
       "price": 120.0,
@@ -169,19 +161,7 @@
     Content-Type: application/json
 
     {
-      "serialNumber": "12345",
-      "manufacturer": "Updated Manufacturer",
-      "price": 120.0,
-      "quantity": 15,
-      "formFactor": "ATX"
-    }
-    ```
-
-- **Пример ответа:**
-
-    ```json
-    {
-      "id": 1,
+      "productType": "DESKTOP",
       "serialNumber": "12345",
       "manufacturer": "Updated Manufacturer",
       "price": 120.0,
@@ -204,14 +184,6 @@
 
     ```http
     DELETE /api/v1/products/1
-    ```
-
-- **Пример ответа:**
-
-    ```json
-    {
-      "message": "Product deleted successfully"
-    }
     ```
 
 - **Ошибки:**
